@@ -14,12 +14,12 @@ import java.util.Collections;
 public class SortData {
 
 	/**
-     * Function to sort an inputed ArrayList of Strings
+     * Function to clean an inputed ArrayList of Strings by removing elements with integers
      * 
      * @param lst
-     * 		ArrayList to be sorted
+     * 		ArrayList to be cleaned
      * 
-     * @return a sorted ArrayList of Strings
+     * @return a cleaned ArrayList of Strings
      * 		
      */
 	public static ArrayList<String> cleanList(ArrayList<String> lst)
@@ -48,6 +48,15 @@ public class SortData {
 		return tempList;
 	}
 	
+	/**
+     * Function to sort an inputed ArrayList of Strings
+     * 
+     * @param lst
+     * 		ArrayList to be sorted
+     * 
+     * @return a sorted ArrayList of Strings
+     * 		
+     */
 	public static ArrayList<String> sortList(ArrayList<String> lst)
 	{
 		Collections.sort(lst, String.CASE_INSENSITIVE_ORDER);
