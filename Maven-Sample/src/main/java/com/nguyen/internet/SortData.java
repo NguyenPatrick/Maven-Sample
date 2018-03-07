@@ -45,8 +45,14 @@ public class SortData {
 			}
 		}
 
-		Collections.sort(tempList, String.CASE_INSENSITIVE_ORDER);
-
 		return tempList;
+	}
+	
+	public static ArrayList<String> sortList(ArrayList<String> lst)
+	{
+		Collections.sort(lst, String.CASE_INSENSITIVE_ORDER);
+		
+		return lst;
+
 	}
 }

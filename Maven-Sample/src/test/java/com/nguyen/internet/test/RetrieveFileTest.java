@@ -8,6 +8,12 @@ import com.nguyen.internet.RetrieveFile;
 
 import junit.framework.TestCase;
 
+/**
+* This class test functions(s) from the class RetrieveFile
+* 
+* @author  Patrick Nguyen
+*/
+
 public class RetrieveFileTest extends TestCase
 {
 	@Test

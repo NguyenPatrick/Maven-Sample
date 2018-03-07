@@ -1,10 +1,10 @@
 package com.nguyen.internet.test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.nguyen.internet.RetrieveFile;
 import com.nguyen.internet.SortData;
 
 import junit.framework.TestCase;
@@ -17,20 +17,45 @@ import junit.framework.TestCase;
 
 public class SortDataTest extends TestCase
 {
-
+	
 	@Test
 	public static void testCleanList()
 	{
-		ArrayList<String> myData = RetrieveFile.parseFile("https://wipebook.org/vnps.csv");
-		ArrayList<String> tempData;
-
-		assertNotNull(myData);
-		tempData = SortData.cleanList(myData);
 		
-		for(String data : tempData)
+		String names = "34,Alex,Ruby,John1,_Victoria,Ham4let,111";
+
+		ArrayList<String> myData = new ArrayList<String>(Arrays.asList(names.split(",")));
+		
+		myData = SortData.cleanList(myData); // should clean the list
+		assertEquals(myData.get(0), "Alex");
+		
+		for(String data : myData)
+		{
+			System.out.println(data);
+		}
+		
+	}
+
+	
+	@Test
+	public static void testSortList()
+	{
+		String names = "Larry,Arthur,Gertrude,_Juliette,Richard";
+		
+		ArrayList<String> myData = new ArrayList<String>(Arrays.asList(names.split(",")));
+		
+		myData = SortData.sortList(myData); // should sort the list
+		assertEquals(myData.get(0), "_Juliette");
+		assertEquals(myData.get(4), "Richard");
+		
+		for(String data : myData)
 		{
 			System.out.println(data);
 		}
 	}
+	
+	
+	
+	
 
 }
